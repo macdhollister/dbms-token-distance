@@ -2,5 +2,8 @@
     "name": "dbms-token-distance",
     "title": "Dudebobmac's Token Distance",
     "description": "Labels distance to other tokens from a selected token.",
-    "version": "0.0.0"
+    "version": "0.0.0",
+    "scripts": [
+        "scripts/token-distance.js"
+    ]
 }
