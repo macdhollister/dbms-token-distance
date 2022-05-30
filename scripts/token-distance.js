@@ -1,5 +1,21 @@
 // TODO: clean this up
 
+class DistanceOverlay extends BasePlaceableHUD {
+    static get defaultOptions() {
+        return foundry.utils.mergeObject(super.defaultOptions, {
+            template: "modules/dbms-token-distance/templates/tokenDistance.hbs"
+        })
+    }
+
+
+    setPosition({ left, top, width, height, scale } = {}) {
+        if (canvas.grid.type === 2 || canvas.grid.type === 3) {
+            left = (left ?? this.object.x) - 6;
+        }
+        super.setPosition({ left, top, width, height, scale });
+    }
+}
+
 
 function getOtherTokens(token) {
     return canvas.tokens.objects.children.filter(tok => tok.id != token.id)
